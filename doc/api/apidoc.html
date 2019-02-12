@@ -1,0 +1,1430 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>API - NuWar The Great Battle</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#c66}.right .hljs-built_in,.right .hljs-constant,.right .hljs-literal,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#de935f}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:#b5bd68}.right .css .hljs-hexcolor,.right .hljs-title{color:#8abeb7}.right .coffeescript .hljs-title,.right .hljs-function,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#81a2be}.right .hljs-keyword,.right .javascript .hljs-function{color:#b294bb}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}body{color:black;background:white;font:400 14px / 1.42 'Roboto',Helvetica,sans-serif}header{border-bottom:1px solid #f2f2f2;margin-bottom:12px}h1,h2,h3,h4,h5{color:black;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:0;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}.triple h1 .permalink,.triple h2 .permalink,.triple h3 .permalink,.triple h4 .permalink,.triple h5 .permalink{opacity:.15}.triple h1:hover .permalink,.triple h2:hover .permalink,.triple h3:hover .permalink,.triple h4:hover .permalink,.triple h5:hover .permalink{opacity:.15}h1{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:36px}h2{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:30px}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:#428bca;text-decoration:none}li p{margin:0}hr.split{border:0;height:1px;width:100%;padding-left:6px;margin:12px auto;background-image:linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(0,0,0,0.2) 51.4%, rgba(255,255,255,0.2) 51.4%, rgba(255,255,255,0) 80%)}dl dt{float:left;width:130px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:150px}blockquote{color:rgba(0,0,0,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #e8e8e8}blockquote p:last-child{margin-bottom:0}pre{background-color:#f5f5f5;padding:12px;border:1px solid #cfcfcf;border-radius:6px;overflow:auto}pre code{color:black;background-color:transparent;padding:0;border:none}code{color:#444;background-color:#f5f5f5;font:'Inconsolata',monospace;padding:1px 4px;border:1px solid #cfcfcf;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#fafafa}table th,table td{padding:6px 12px;border:1px solid #e6e6e6}.text-muted{opacity:.5}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:200 36px 'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:black;background-color:#f0f6fb;border-left:4px solid #428bca}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#428bca}.warning{color:black;background-color:#fbf1f0;border-left:4px solid #c9302c}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#c9302c}header{margin-top:24px}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:black;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(0,0,0,0.7);padding:8px 12px;border-top:1px solid #d9d9d9;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#000;background-color:#f2f2f2;border-radius:10px;margin:-2px 0}.badge.get{color:#70bbe1;background-color:#d9edf7}.badge.head{color:#70bbe1;background-color:#d9edf7}.badge.options{color:#70bbe1;background-color:#d9edf7}.badge.put{color:#f0db70;background-color:#fcf8e3}.badge.patch{color:#f0db70;background-color:#fcf8e3}.badge.post{color:#93cd7c;background-color:#dff0d8}.badge.delete{color:#ce8383;background-color:#f2dede}.collapse-button{float:right}.collapse-button .close{display:none;color:#428bca;cursor:pointer}.collapse-button .open{color:#428bca;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%}.container-fluid.triple nav{width:16.5%;padding-right:1px}.container-fluid.triple .row .content{position:relative;margin-left:16.5%;padding-left:24px}.middle:before,.middle:after{content:'';display:table}.middle:after{clear:both}.middle{box-sizing:border-box;width:51.5%;padding-right:12px}.right{box-sizing:border-box;float:right;width:48.5%;padding-left:12px}.right a{color:#428bca}.right h1,.right h2,.right h3,.right h4,.right h5,.right p,.right div{color:white}.right pre{background-color:#1d1f21;border:1px solid #1d1f21}.right pre code{color:#c5c8c6}.right .description{margin-top:12px}.triple .resource-heading{font-size:125%}.definition{margin-top:12px;margin-bottom:12px}.definition .method{font-weight:bold}.definition .method.get{color:#2e8ab8}.definition .method.head{color:#2e8ab8}.definition .method.options{color:#2e8ab8}.definition .method.post{color:#56b82e}.definition .method.put{color:#b8a22e}.definition .method.patch{color:#b8a22e}.definition .method.delete{color:#b82e2e}.definition .uri{word-break:break-all;word-wrap:break-word}.definition .hostname{opacity:.5}.example-names{background-color:#eee;padding:12px;border-radius:6px}.example-names .tab-button{cursor:pointer;color:black;border:1px solid #ddd;padding:6px;margin-left:12px}.example-names .tab-button.active{background-color:#d5d5d5}.right .example-names{background-color:#444}.right .example-names .tab-button{color:white;border:1px solid #666;border-radius:6px}.right .example-names .tab-button.active{background-color:#5e5e5e}#nav-background{position:fixed;left:0;top:0;bottom:0;width:16.5%;padding-right:14.4px;background-color:#fbfbfb;border-right:1px solid #f0f0f0;z-index:-1}#right-panel-background{position:absolute;right:-12px;top:-12px;bottom:-12px;width:48.6%;background-color:#333;z-index:-1}@media (max-width:1200px){nav{width:198px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:169.4px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content,.container-fluid.triple .row .content{margin-left:auto;margin-right:auto;width:95%}#nav-background{display:none}#right-panel-background{width:48.6%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(0,0,0,0.5);background-color:#f2f2f2;text-decoration:none !important;border-top:1px solid #d9d9d9;border-left:1px solid #d9d9d9;border-right:1px solid #d9d9d9;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:white;border:1px solid #d9d9d9;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#f2f2f2;border-bottom:1px solid #d9d9d9;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.triple .content .resource-group{padding:0;border:none}.triple .content .resource-group h2.group-heading,.triple .content .resource-group .heading a{margin:0 0 12px 0;border:1px solid #d9d9d9}nav .resource-group .heading a{padding:12px;margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:6px 12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal;padding:6px 0}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px;display:inline-block}.action h4.action-heading .method.get{color:#fff;background-color:#337ab7}.action h4.action-heading .method.head{color:#fff;background-color:#337ab7}.action h4.action-heading .method.options{color:#fff;background-color:#337ab7}.action h4.action-heading .method.put{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.patch{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.post{color:#fff;background-color:#5cb85c}.action h4.action-heading .method.delete{color:#fff;background-color:#d9534f}.action h4.action-heading code{color:#444;background-color:#f5f5f5;border-color:#cfcfcf;font-weight:normal;word-break:break-all;display:inline-block;margin-top:2px}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid white;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#bce8f1}.action.get h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.head{border-color:#bce8f1}.action.head h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.options{border-color:#bce8f1}.action.options h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.post{border-color:#d6e9c6}.action.post h4.action-heading{color:#5cb85c;background:#dff0d8;border-bottom-color:#d6e9c6}.action.put{border-color:#faebcc}.action.put h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.patch{border-color:#faebcc}.action.patch h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.delete{border-color:#ebccd1}.action.delete h4.action-heading{color:#d9534f;background:#f2dede;border-bottom-color:#ebccd1}</style></head><body class="preload"><div id="nav-background"></div><div class="container-fluid triple"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#top">Overview</a></div><div class="collapse-content"><ul><li><a href="#header-features">Features</a></li><li><a href="#header-warning"> Warning</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#grid-management">Grid Management</a></div><div class="collapse-content"><ul><li><a href="#grid-management-grids">Grids</a><ul><li><a href="#grid-management-grids-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get all grids</a></li><li><a href="#grid-management-grids-post"><span class="badge post"><i class="fa fa-plus"></i></span>Create a new grid</a></li></ul></li><li><a href="#grid-management-grid-manipulation">Grid Manipulation</a><ul><li><a href="#grid-management-grid-manipulation-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get an especific grid</a></li><li><a href="#grid-management-grid-manipulation-put"><span class="badge put"><i class="fa fa-pencil"></i></span>Prepare, Start or Stop a Game</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#robot-management">Robot Management</a></div><div class="collapse-content"><ul><li><a href="#robot-management-robot">Robot</a><ul><li><a href="#robot-management-robot-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get robot from a grid</a></li><li><a href="#robot-management-robot-post"><span class="badge post"><i class="fa fa-plus"></i></span>Create a new robot</a></li><li><a href="#robot-management-robot-delete"><span class="badge delete"><i class="fa fa-times"></i></span>Delete robot from a grid</a></li></ul></li><li><a href="#robot-management-robot-actions-put"><span class="badge put"><i class="fa fa-pencil"></i></span>Attack or Walking with a robot</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#dino-management">Dino Management</a></div><div class="collapse-content"><ul><li><a href="#dino-management-dinosaur">Dinosaur</a><ul><li><a href="#dino-management-dinosaur-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get dino list from a grid</a></li><li><a href="#dino-management-dinosaur-post"><span class="badge post"><i class="fa fa-plus"></i></span>Create a new dinosaur</a></li><li><a href="#dino-management-dinosaur-delete"><span class="badge delete"><i class="fa fa-times"></i></span>Delete dino list from a grid</a></li></ul></li></ul></div></div><p style="text-align: center; word-wrap: break-word;"><a href="http://localhost:8080/api">http://localhost:8080/api</a></p></nav><div class="content"><div id="right-panel-background"></div><div class="middle"><header><h1 id="top">API - NuWar The Great Battle</h1></header></div><div class="right"><h5>API Endpoint</h5><a href="http://localhost:8080/api">http://localhost:8080/api</a></div><div class="middle"><img style="float: right; position: relative; bottom: 100px; width: 90px; heigth: 90px;" src="../../resources/public/images/nuwar-logo-black.png">
+<p>This <strong>API</strong> allows us to manages the <strong>NuWar Game</strong></p>
+<h2 id="header-features">Features <a class="permalink" href="#header-features" aria-hidden="true">¶</a></h2>
+<p>This <strong>API</strong> has the following features groups definitions:</p>
+<ul>
+<li>
+<p>Grid Management</p>
+</li>
+<li>
+<p>Robot Management</p>
+</li>
+<li>
+<p>Dinosaur Management</p>
+</li>
+</ul>
+<div class="warning">
+<h4 id="header-warning"><i class="fa fa-warning"></i> Warning <a class="permalink" href="#header-warning" aria-hidden="true">¶</a></h4>
+<p>The resources of this API is not protect with an <strong>Authentication System</strong>,
+so be aware of all resources is exposed. The authentication system will be implemented in the future.</p>
+</div>
+</div><div class="middle"><section id="grid-management" class="resource-group"><h2 class="group-heading">Grid Management <a href="#grid-management" class="permalink">&para;</a></h2><p>In this resource we have the following options:</p>
+<ul>
+<li>
+<p><strong>Get all grids</strong></p>
+</li>
+<li>
+<p><strong>Get a single grid</strong></p>
+</li>
+<li>
+<p><strong>Create a new grid</strong></p>
+</li>
+</ul>
+</section></div><div class="middle"><div id="grid-management-grids" class="resource"><h3 class="resource-heading">Grids <a href="#grid-management-grids" class="permalink">&para;</a></h3><p>Create or get grids</p>
+</div></div><div class="right"><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://localhost:8080/api</span>/grid</span></div><div class="tabs"><div class="example-names"><span>Requests</span><span class="tab-button">Getting all Grids</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">200</span><span class="tab-button">404</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"ok"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Operation Successful"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">200</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Successful"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-id&gt;"</span></span>,
+      "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-state&gt;"</span></span>,
+      "<span class="hljs-attribute">robot</span>": <span class="hljs-value">{}</span>,
+      "<span class="hljs-attribute">dinos</span>": <span class="hljs-value">[]
+    </span>}
+  ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"not found"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Not Found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">404</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"There are no registered grids"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">[]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div></div><div class="middle"><div id="grid-management-grids-get" class="action get"><h4 class="action-heading"><div class="name">Get all grids</div><a href="#grid-management-grids-get" class="method get">GET</a><code class="uri">/grid</code></h4><p>Response body <strong>fields</strong> description</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">FIELD</th>
+<th>TYPE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>type</strong></td>
+<td><code>String</code></td>
+<td>Response type (HTTP Types)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>title</strong></td>
+<td><code>String</code></td>
+<td>Title of the response message</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>status</strong></td>
+<td><code>Numeric</code></td>
+<td>HTTP Response status code</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>message</strong></td>
+<td><code>String</code></td>
+<td>Response message</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data</strong></td>
+<td><code>ObjectArray</code></td>
+<td>Resource response data</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong><a href="http://data.id">data.id</a></strong></td>
+<td><code>String</code></td>
+<td>Grid id (Game Id)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.status</strong></td>
+<td><code>String</code></td>
+<td>Grid status (Game Status)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.robot</strong></td>
+<td><code>Object</code></td>
+<td>Robot Object</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.dinos</strong></td>
+<td><code>ObjectArray</code></td>
+<td>List of dinosaurs</td>
+</tr>
+</tbody>
+</table>
+<div class="note">
+<h4 id="header-info"><i class="fa fa-info"></i> Info <a class="permalink" href="#header-info" aria-hidden="true">¶</a></h4>
+<p>The possible values of <strong>data.status</strong> is:</p>
+<ul>
+<li>
+<p><strong>created</strong> -&gt; Just create a grid</p>
+</li>
+<li>
+<p><strong>ready</strong> -&gt; Ready for play</p>
+</li>
+<li>
+<p><strong>running</strong> -&gt; The game is running</p>
+</li>
+<li>
+<p><strong>finished</strong> -&gt; The game os finished</p>
+</li>
+</ul>
+</div>
+</div></div><hr class="split"><div class="right"><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">http://localhost:8080/api</span>/grid</span></div><div class="tabs"><div class="example-names"><span>Requests</span><span class="tab-button">Create a New Grid</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"my-grid-id-name"</span>
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">201</span><span class="tab-button">400</span><span class="tab-button">404</span><span class="tab-button">409</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"created"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Created"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">201</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"The grid has been created successfully!"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"id"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"created"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value">{}</span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value">[]
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"bad request"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Bad Request"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">400</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Invalid request body! Take a look on the docs for more details"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">your-request-body</span>": <span class="hljs-value"><span class="hljs-string">"here"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"not found"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Not Found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">404</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"There are no registered grids"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">[]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"conflict"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"A conflict was found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">409</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"The chosen name for the grid already exists, please choose another."</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">chosen-name</span>": <span class="hljs-value"><span class="hljs-string">"id"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div></div><div class="middle"><div id="grid-management-grids-post" class="action post"><h4 class="action-heading"><div class="name">Create a new grid</div><a href="#grid-management-grids-post" class="method post">POST</a><code class="uri">/grid</code></h4><p>Request body <strong>fields</strong> description</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">FIELD</th>
+<th>TYPE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>name</strong></td>
+<td><code>String</code></td>
+<td>The grid id (Game Id)</td>
+</tr>
+</tbody>
+</table>
+</div></div><hr class="split"><div class="middle"><div id="grid-management-grid-manipulation" class="resource"><h3 class="resource-heading">Grid Manipulation <a href="#grid-management-grid-manipulation" class="permalink">&para;</a></h3><p>Do some actions with a grid, like:</p>
+<ul>
+<li>
+<p>Get a especific grid;</p>
+</li>
+<li>
+<p><strong>Prepare</strong> Game;</p>
+</li>
+<li>
+<p><strong>Start</strong> Game;</p>
+</li>
+<li>
+<p><strong>Stop</strong> Game;</p>
+</li>
+</ul>
+</div></div><div class="right"><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://localhost:8080/api</span>/grid/<span class="hljs-attribute" title="grid_id">my-grid</span></span></div><div class="tabs"><div class="example-names"><span>Requests</span><span class="tab-button">Get an Especific Grid</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">200</span><span class="tab-button">404</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"ok"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Operation Successful"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">200</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Successful"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-id&gt;"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-state&gt;"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value">{}</span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value">[]
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"not found"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Not Found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">404</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"There are no registered grids"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">[]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div></div><div class="middle"><div id="grid-management-grid-manipulation-get" class="action get"><h4 class="action-heading"><div class="name">Get an especific grid</div><a href="#grid-management-grid-manipulation-get" class="method get">GET</a><code class="uri">/grid/{grid_id}</code></h4><p>Response body <strong>fields</strong> description</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">FIELD</th>
+<th>TYPE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>type</strong></td>
+<td><code>String</code></td>
+<td>Response type (HTTP Types)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>title</strong></td>
+<td><code>String</code></td>
+<td>Title of the response message</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>status</strong></td>
+<td><code>Numeric</code></td>
+<td>HTTP Response status code</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>message</strong></td>
+<td><code>String</code></td>
+<td>Response message</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data</strong></td>
+<td><code>Object</code></td>
+<td>Resource response data</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong><a href="http://data.id">data.id</a></strong></td>
+<td><code>String</code></td>
+<td>Grid id (Game Id)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.status</strong></td>
+<td><code>String</code></td>
+<td>Grid status (Game Status)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.robot</strong></td>
+<td><code>Object</code></td>
+<td>Robot Object</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.dinos</strong></td>
+<td><code>ObjectArray</code></td>
+<td>List of dinosaurs</td>
+</tr>
+</tbody>
+</table>
+<div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>grid_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>my-grid</span></span><p>Unique grid identifier</p>
+</dd></dl></div></div></div><hr class="split"><div class="right"><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">http://localhost:8080/api</span>/grid/<span class="hljs-attribute" title="grid_id">my-grid</span></span></div><div class="tabs"><div class="example-names"><span>Requests</span><span class="tab-button">Prepare Action</span><span class="tab-button">Start Action</span><span class="tab-button">Stop Action</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">grid-id</span>":<span class="hljs-value"><span class="hljs-string">"my-grid"</span></span>,
+    "<span class="hljs-attribute">action</span>": <span class="hljs-value"><span class="hljs-string">"prepare"</span></span>,
+}</code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">201</span><span class="tab-button">400</span><span class="tab-button">404</span><span class="tab-button">409</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"created"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Created"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">201</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"&lt;Congrats your game is ready to be started&gt; or &lt;Congrats your game is started!&gt; or &lt;Congrats your game is stopped&gt;"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"id"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-status&gt;"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value"><span class="hljs-string">"{&lt;some-robot-info&gt;}"</span></span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value"><span class="hljs-string">"[&lt;some-dino-info&gt;]"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"bad request"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Bad Request"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">400</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Invalid request body! Take a look on the docs for more details"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">your-request-body</span>": <span class="hljs-value"><span class="hljs-string">"here"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"not found"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Not Found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">404</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"There are no registered grids"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">[]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"conflict"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"A conflict was found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">409</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"&lt;Sorry, but you need to add at least \n one robot and one dinosaur to prepare the game.&gt; or &lt;Sorry, but you need prepare the game before \n started it&gt; or &lt;Sorry, but you can only stop the game \n if it is in a running state!&gt;"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"id"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-status&gt;"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value"><span class="hljs-string">"{&lt;some-robot-info&gt;}"</span></span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value"><span class="hljs-string">"[&lt;some-dino-info&gt;]"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">grid-id</span>":<span class="hljs-value"><span class="hljs-string">"my-grid"</span></span>,
+    "<span class="hljs-attribute">action</span>": <span class="hljs-value"><span class="hljs-string">"start"</span></span>,
+}</code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">201</span><span class="tab-button">400</span><span class="tab-button">404</span><span class="tab-button">409</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"created"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Created"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">201</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"&lt;Congrats your game is ready to be started&gt; or &lt;Congrats your game is started!&gt; or &lt;Congrats your game is stopped&gt;"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"id"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-status&gt;"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value"><span class="hljs-string">"{&lt;some-robot-info&gt;}"</span></span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value"><span class="hljs-string">"[&lt;some-dino-info&gt;]"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"bad request"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Bad Request"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">400</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Invalid request body! Take a look on the docs for more details"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">your-request-body</span>": <span class="hljs-value"><span class="hljs-string">"here"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"not found"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Not Found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">404</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"There are no registered grids"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">[]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"conflict"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"A conflict was found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">409</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"&lt;Sorry, but you need to add at least \n one robot and one dinosaur to prepare the game.&gt; or &lt;Sorry, but you need prepare the game before \n started it&gt; or &lt;Sorry, but you can only stop the game \n if it is in a running state!&gt;"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"id"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-status&gt;"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value"><span class="hljs-string">"{&lt;some-robot-info&gt;}"</span></span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value"><span class="hljs-string">"[&lt;some-dino-info&gt;]"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">grid-id</span>":<span class="hljs-value"><span class="hljs-string">"my-grid"</span></span>,
+    "<span class="hljs-attribute">action</span>": <span class="hljs-value"><span class="hljs-string">"stop"</span></span>,
+}</code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">201</span><span class="tab-button">400</span><span class="tab-button">404</span><span class="tab-button">409</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"created"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Created"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">201</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"&lt;Congrats your game is ready to be started&gt; or &lt;Congrats your game is started!&gt; or &lt;Congrats your game is stopped&gt;"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"id"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-status&gt;"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value"><span class="hljs-string">"{&lt;some-robot-info&gt;}"</span></span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value"><span class="hljs-string">"[&lt;some-dino-info&gt;]"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"bad request"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Bad Request"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">400</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Invalid request body! Take a look on the docs for more details"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">your-request-body</span>": <span class="hljs-value"><span class="hljs-string">"here"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"not found"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Not Found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">404</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"There are no registered grids"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">[]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"conflict"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"A conflict was found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">409</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"&lt;Sorry, but you need to add at least \n one robot and one dinosaur to prepare the game.&gt; or &lt;Sorry, but you need prepare the game before \n started it&gt; or &lt;Sorry, but you can only stop the game \n if it is in a running state!&gt;"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"id"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-status&gt;"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value"><span class="hljs-string">"{&lt;some-robot-info&gt;}"</span></span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value"><span class="hljs-string">"[&lt;some-dino-info&gt;]"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div></div><div class="middle"><div id="grid-management-grid-manipulation-put" class="action put"><h4 class="action-heading"><div class="name">Prepare, Start or Stop a Game</div><a href="#grid-management-grid-manipulation-put" class="method put">PUT</a><code class="uri">/grid/{grid_id}</code></h4><p>Request body <strong>fields</strong> description</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">FIELD</th>
+<th>TYPE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>grid-id</strong></td>
+<td><code>String</code></td>
+<td>The grid id (Game Id)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>action</strong></td>
+<td><code>String</code></td>
+<td>The robot action (such as prepare, start or stop)</td>
+</tr>
+</tbody>
+</table>
+<div class="note">
+<h4 id="header-info-1"><i class="fa fa-info"></i> Info <a class="permalink" href="#header-info-1" aria-hidden="true">¶</a></h4>
+<p>The possible values of <strong>action</strong> is:</p>
+<ul>
+<li>
+<p><strong>prepare</strong> -&gt; Change the status grid (game) to ready</p>
+</li>
+<li>
+<p><strong>start</strong> -&gt; Change the status grid (game) to running</p>
+</li>
+<li>
+<p><strong>stop</strong> -&gt; Change the status grid (game) to finished</p>
+</li>
+</ul>
+</div>
+<div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>grid_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>my-grid</span></span><p>Unique grid identifier</p>
+</dd></dl></div></div></div><hr class="split"><div class="middle"><section id="robot-management" class="resource-group"><h2 class="group-heading">Robot Management <a href="#robot-management" class="permalink">&para;</a></h2><p>In this resource we have the following options:</p>
+<ul>
+<li>
+<p><strong>Get robot from a grid</strong></p>
+</li>
+<li>
+<p><strong>Create new robot into a grid</strong></p>
+</li>
+<li>
+<p><strong>Delete the current robot from a grid</strong></p>
+</li>
+</ul>
+</section></div><div class="middle"><div id="robot-management-robot" class="resource"><h3 class="resource-heading">Robot <a href="#robot-management-robot" class="permalink">&para;</a></h3><p>Get a robot from a grid</p>
+</div></div><div class="right"><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://localhost:8080/api</span>/grid/<span class="hljs-attribute" title="grid_id">my-grid</span>/robot</span></div><div class="tabs"><div class="example-names"><span>Requests</span><span class="tab-button">Getting Robot from a Grid</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">200</span><span class="tab-button">404</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"ok"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Operation Successful"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">200</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Successful"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Wall-e"</span></span>,
+      "<span class="hljs-attribute">position</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">x</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+        "<span class="hljs-attribute">y</span>": <span class="hljs-value"><span class="hljs-number">5</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">facing</span>": <span class="hljs-value"><span class="hljs-string">"down"</span></span>,
+      "<span class="hljs-attribute">points</span>": <span class="hljs-value"><span class="hljs-number">0</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"not found"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Not Found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">404</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"This grid does not contains a robot."</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">grid</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"&lt;grid-id&gt;"</span></span>,
+      "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-status&gt;"</span></span>,
+      "<span class="hljs-attribute">robot</span>": <span class="hljs-value">{}</span>,
+      "<span class="hljs-attribute">dinos</span>": <span class="hljs-value">[]
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div></div><div class="middle"><div id="robot-management-robot-get" class="action get"><h4 class="action-heading"><div class="name">Get robot from a grid</div><a href="#robot-management-robot-get" class="method get">GET</a><code class="uri">/grid/{grid_id}/robot</code></h4><p>Response body <strong>fields</strong> description</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">FIELD</th>
+<th>TYPE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>type</strong></td>
+<td><code>String</code></td>
+<td>Response type (HTTP Types)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>title</strong></td>
+<td><code>String</code></td>
+<td>Title of the response message</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>status</strong></td>
+<td><code>Numeric</code></td>
+<td>HTTP Response status code</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>message</strong></td>
+<td><code>String</code></td>
+<td>Response message</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data</strong></td>
+<td><code>Object</code></td>
+<td>Resource response data</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.robot</strong></td>
+<td><code>Object</code></td>
+<td>Robot Object</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong><a href="http://data.robot.name">data.robot.name</a></strong></td>
+<td><code>String</code></td>
+<td>Robot Name</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.robot.position</strong></td>
+<td><code>Object</code></td>
+<td>Robot Position Object</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.robot.position.x</strong></td>
+<td><code>Numeric</code></td>
+<td>Robot x-axis position</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.robot.position.y</strong></td>
+<td><code>Numeric</code></td>
+<td>Robot y-axis position</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.robot.facing</strong></td>
+<td><code>String</code></td>
+<td>Robot facing-direction</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.robot.points</strong></td>
+<td><code>Numeric</code></td>
+<td>Robot facing-direction</td>
+</tr>
+</tbody>
+</table>
+<div class="note">
+<h4 id="header-info-2"><i class="fa fa-info"></i> Info <a class="permalink" href="#header-info-2" aria-hidden="true">¶</a></h4>
+<p>The possible values of <strong>data.robot.facing</strong> is:</p>
+<ul>
+<li>
+<p><strong>up</strong> -&gt; Up facing direction</p>
+</li>
+<li>
+<p><strong>down</strong> -&gt; Down facing direction</p>
+</li>
+<li>
+<p><strong>left</strong> -&gt; Left facing direction</p>
+</li>
+<li>
+<p><strong>rigth</strong> -&gt; Right facing direction</p>
+</li>
+</ul>
+</div>
+<div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>grid_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>my-grid</span></span><p>Unique grid identifier</p>
+</dd></dl></div></div></div><hr class="split"><div class="right"><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">http://localhost:8080/api</span>/grid/<span class="hljs-attribute" title="grid_id">my-grid</span>/robot</span></div><div class="tabs"><div class="example-names"><span>Requests</span><span class="tab-button">Creating New Robot</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">grid-id</span>": <span class="hljs-value"><span class="hljs-string">"my-grid"</span></span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Wall-e"</span></span>,
+  "<span class="hljs-attribute">robot-pos-x</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+  "<span class="hljs-attribute">robot-pos-y</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+  "<span class="hljs-attribute">facing-direction</span>": <span class="hljs-value"><span class="hljs-string">"down"</span>
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">201</span><span class="tab-button">400</span><span class="tab-button">404</span><span class="tab-button">409</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"created"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Created"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">201</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Resource created successfully"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"id"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"created"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Wall-e"</span></span>,
+      "<span class="hljs-attribute">position</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">x</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+        "<span class="hljs-attribute">y</span>": <span class="hljs-value"><span class="hljs-number">5</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">facing</span>": <span class="hljs-value"><span class="hljs-string">"down"</span></span>,
+      "<span class="hljs-attribute">points</span>": <span class="hljs-value"><span class="hljs-number">0</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value">[]
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"bad request"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Bad Request"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">400</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Invalid request body! Take a look on the docs for more details"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">your-request-body</span>": <span class="hljs-value"><span class="hljs-string">"here"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"not found"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Not Found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">404</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"There are no registered grids"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">[]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"conflict"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"A conflict was found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">409</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"There already exists a robot on \n this grid or you trying to create a robot in the same existent dinosaur position"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Wall-e"</span></span>,
+      "<span class="hljs-attribute">position</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">x</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+        "<span class="hljs-attribute">y</span>": <span class="hljs-value"><span class="hljs-number">5</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">facing</span>": <span class="hljs-value"><span class="hljs-string">"down"</span></span>,
+      "<span class="hljs-attribute">points</span>": <span class="hljs-value"><span class="hljs-number">0</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div></div><div class="middle"><div id="robot-management-robot-post" class="action post"><h4 class="action-heading"><div class="name">Create a new robot</div><a href="#robot-management-robot-post" class="method post">POST</a><code class="uri">/grid/{grid_id}/robot</code></h4><p>Request body <strong>fields</strong> description</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">FIELD</th>
+<th>TYPE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>grid-id</strong></td>
+<td><code>String</code></td>
+<td>The grid id (Game Id)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>name</strong></td>
+<td><code>String</code></td>
+<td>The robot name</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>robot-pos-x</strong></td>
+<td><code>Numeric</code></td>
+<td>The robot x-axis position</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>robot-pos-y</strong></td>
+<td><code>Numeric</code></td>
+<td>The robot y-axis postion</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>facing-direction</strong></td>
+<td><code>String</code></td>
+<td>The robot facing direction</td>
+</tr>
+</tbody>
+</table>
+<div class="note">
+<h4 id="header-info-3"><i class="fa fa-info"></i> Info <a class="permalink" href="#header-info-3" aria-hidden="true">¶</a></h4>
+<p>The possible values of <strong>data.robot.facing</strong> is:</p>
+<ul>
+<li>
+<p><strong>up</strong> -&gt; Up facing direction</p>
+</li>
+<li>
+<p><strong>down</strong> -&gt; Down facing direction</p>
+</li>
+<li>
+<p><strong>left</strong> -&gt; Left facing direction</p>
+</li>
+<li>
+<p><strong>rigth</strong> -&gt; Right facing direction</p>
+</li>
+</ul>
+</div>
+<div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>grid_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>my-grid</span></span><p>Unique grid identifier</p>
+</dd></dl></div></div></div><hr class="split"><div class="right"><div class="definition"><span class="method delete">DELETE</span>&nbsp;<span class="uri"><span class="hostname">http://localhost:8080/api</span>/grid/<span class="hljs-attribute" title="grid_id">my-grid</span>/robot</span></div><div class="tabs"><div class="example-names"><span>Requests</span><span class="tab-button">Deleting Robot</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">200</span><span class="tab-button">404</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"ok"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Operation Successful"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">200</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Successful"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"id"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-status&gt;"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value">{}</span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value">[]
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"not found"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Not Found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">404</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"This grid does not contains a robot."</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">grid</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"&lt;grid-id&gt;"</span></span>,
+      "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-status&gt;"</span></span>,
+      "<span class="hljs-attribute">robot</span>": <span class="hljs-value">{}</span>,
+      "<span class="hljs-attribute">dinos</span>": <span class="hljs-value">[]
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div></div><div class="middle"><div id="robot-management-robot-delete" class="action delete"><h4 class="action-heading"><div class="name">Delete robot from a grid</div><a href="#robot-management-robot-delete" class="method delete">DELETE</a><code class="uri">/grid/{grid_id}/robot</code></h4><p>Response body <strong>fields</strong> description</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">FIELD</th>
+<th>TYPE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>type</strong></td>
+<td><code>String</code></td>
+<td>Response type (HTTP Types)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>title</strong></td>
+<td><code>String</code></td>
+<td>Title of the response message</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>status</strong></td>
+<td><code>Numeric</code></td>
+<td>HTTP Response status code</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>message</strong></td>
+<td><code>String</code></td>
+<td>Response message</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data</strong></td>
+<td><code>ObjectArray</code></td>
+<td>Resource response data</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong><a href="http://data.id">data.id</a></strong></td>
+<td><code>String</code></td>
+<td>Grid id (Game Id)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.status</strong></td>
+<td><code>String</code></td>
+<td>Grid status (Game Status)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.robot</strong></td>
+<td><code>Object</code></td>
+<td>Robot Object</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.dinos</strong></td>
+<td><code>ObjectArray</code></td>
+<td>List of dinosaurs</td>
+</tr>
+</tbody>
+</table>
+<div class="note">
+<h4 id="header-info-4"><i class="fa fa-info"></i> Info <a class="permalink" href="#header-info-4" aria-hidden="true">¶</a></h4>
+<p>The possible values of <strong>data.status</strong> is:</p>
+<ul>
+<li>
+<p><strong>created</strong> -&gt; Just create a grid</p>
+</li>
+<li>
+<p><strong>ready</strong> -&gt; Ready for play</p>
+</li>
+<li>
+<p><strong>running</strong> -&gt; The game is running</p>
+</li>
+<li>
+<p><strong>finished</strong> -&gt; The game os finished</p>
+</li>
+</ul>
+</div>
+<div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>grid_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>my-grid</span></span><p>Unique grid identifier</p>
+</dd></dl></div></div></div><hr class="split"><div class="middle"><div id="robot-management-robot-actions" class="resource"><h3 class="resource-heading">Robot Actions <a href="#robot-management-robot-actions" class="permalink">&para;</a></h3><p>Do some actions with a robot, like:</p>
+<ul>
+<li>
+<p>Walk</p>
+</li>
+<li>
+<p>Attack</p>
+</li>
+</ul>
+</div></div><div class="right"><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">http://localhost:8080/api</span>/grid/<span class="hljs-attribute" title="grid_id">my-grid</span>/robot/actions</span></div><div class="tabs"><div class="example-names"><span>Requests</span><span class="tab-button">Attack Action</span><span class="tab-button">Walk Action</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">grid-id</span>":<span class="hljs-value"><span class="hljs-string">"my-grid"</span></span>,
+    "<span class="hljs-attribute">action</span>": <span class="hljs-value"><span class="hljs-string">"attack"</span></span>,
+}</code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">200</span><span class="tab-button">201</span><span class="tab-button">400</span><span class="tab-button">404</span><span class="tab-button">409</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"ok"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Operation Successful"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">200</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Sorry, you not killed any dinosaur"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"id"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-status&gt;"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value"><span class="hljs-string">"{&lt;some-robot-info&gt;}"</span></span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value"><span class="hljs-string">"[&lt;some-dino-info&gt;]"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"created"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Created"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">201</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Resource created successfully"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"id"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-status&gt;"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value"><span class="hljs-string">"{&lt;some-robot-info&gt;}"</span></span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value"><span class="hljs-string">"[&lt;some-dino-info&gt;]"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"bad request"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Bad Request"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">400</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Invalid request body! Take a look on the docs for more details"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">your-request-body</span>": <span class="hljs-value"><span class="hljs-string">"here"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"not found"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Not Found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">404</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"There are no registered grids"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">[]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"conflict"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"A conflict was found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">409</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"&lt;Sorry, but you need to start the game first \n before pursuing with this operation&gt; or &lt;Sorry, but you can't walk \n further on that direction&gt; or &lt;Sorry, entity collision detected! \n try to walk in another direction&gt;"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"id"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-status&gt;"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value"><span class="hljs-string">"{&lt;some-robot-info&gt;}"</span></span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value"><span class="hljs-string">"[&lt;some-dino-info&gt;]"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">grid-id</span>": <span class="hljs-value"><span class="hljs-string">"my-grid"</span></span>,
+  "<span class="hljs-attribute">action</span>": <span class="hljs-value"><span class="hljs-string">"attack"</span></span>,
+  "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"forward"</span>
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">200</span><span class="tab-button">201</span><span class="tab-button">400</span><span class="tab-button">404</span><span class="tab-button">409</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"ok"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Operation Successful"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">200</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Sorry, you not killed any dinosaur"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"id"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-status&gt;"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value"><span class="hljs-string">"{&lt;some-robot-info&gt;}"</span></span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value"><span class="hljs-string">"[&lt;some-dino-info&gt;]"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"created"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Created"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">201</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Resource created successfully"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"id"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-status&gt;"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value"><span class="hljs-string">"{&lt;some-robot-info&gt;}"</span></span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value"><span class="hljs-string">"[&lt;some-dino-info&gt;]"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"bad request"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Bad Request"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">400</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Invalid request body! Take a look on the docs for more details"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">your-request-body</span>": <span class="hljs-value"><span class="hljs-string">"here"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"not found"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Not Found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">404</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"There are no registered grids"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">[]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"conflict"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"A conflict was found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">409</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"&lt;Sorry, but you need to start the game first \n before pursuing with this operation&gt; or &lt;Sorry, but you can't walk \n further on that direction&gt; or &lt;Sorry, entity collision detected! \n try to walk in another direction&gt;"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"id"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-status&gt;"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value"><span class="hljs-string">"{&lt;some-robot-info&gt;}"</span></span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value"><span class="hljs-string">"[&lt;some-dino-info&gt;]"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div></div><div class="middle"><div id="robot-management-robot-actions-put" class="action put"><h4 class="action-heading"><div class="name">Attack or Walking with a robot</div><a href="#robot-management-robot-actions-put" class="method put">PUT</a><code class="uri">/grid/{grid_id}/robot/actions</code></h4><p>Request body <strong>fields</strong> description</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">FIELD</th>
+<th>TYPE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>grid-id</strong></td>
+<td><code>String</code></td>
+<td>The grid id (Game Id)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>action</strong></td>
+<td><code>String</code></td>
+<td>The robot action (such as attack or walk)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>value</strong></td>
+<td><code>String</code></td>
+<td>The robot walking direction (required for walk)</td>
+</tr>
+</tbody>
+</table>
+<div class="note">
+<h4 id="header-info-5"><i class="fa fa-info"></i> Info <a class="permalink" href="#header-info-5" aria-hidden="true">¶</a></h4>
+<p>The possible values of <strong>action</strong> is:</p>
+<ul>
+<li>
+<p><strong>attack</strong> -&gt; Throw the robot attack</p>
+</li>
+<li>
+<p><strong>walk</strong> -&gt; Walki with a robot (need to especify the direction)</p>
+</li>
+</ul>
+</div>
+<div class="note">
+<h4 id="header-info-6"><i class="fa fa-info"></i> Info <a class="permalink" href="#header-info-6" aria-hidden="true">¶</a></h4>
+<p>The possible values of <strong>value</strong> is:</p>
+<ul>
+<li>
+<p><strong>forward</strong> -&gt; Walk one space forward</p>
+</li>
+<li>
+<p><strong>backward</strong> -&gt; Walk one space backward</p>
+</li>
+<li>
+<p><strong>leftward</strong> -&gt; Walk one space leftward</p>
+</li>
+<li>
+<p><strong>rightward</strong> -&gt; Walk one space rightward</p>
+</li>
+</ul>
+</div>
+<div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>grid_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>my-grid</span></span><p>Unique grid identifier</p>
+</dd></dl></div></div></div><hr class="split"><div class="middle"><section id="dino-management" class="resource-group"><h2 class="group-heading">Dino Management <a href="#dino-management" class="permalink">&para;</a></h2><p>In this resource we have the following options:</p>
+<ul>
+<li>
+<p><strong>Get dino list from a grid</strong></p>
+</li>
+<li>
+<p><strong>Create new dino and insert into a grid</strong></p>
+</li>
+<li>
+<p><strong>Delete the dino list from a grid (NOT IMPLEMENTED)</strong></p>
+</li>
+</ul>
+</section></div><div class="middle"><div id="dino-management-dinosaur" class="resource"><h3 class="resource-heading">Dinosaur <a href="#dino-management-dinosaur" class="permalink">&para;</a></h3><p>Get a dino list from a grid</p>
+</div></div><div class="right"><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">http://localhost:8080/api</span>/grid/<span class="hljs-attribute" title="grid_id">my-grid</span>/dino</span></div><div class="tabs"><div class="example-names"><span>Requests</span><span class="tab-button">Getting Robot from a Grid</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">200</span><span class="tab-button">404</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"ok"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Operation Successful"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">200</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Successful"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">position</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">x</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+          "<span class="hljs-attribute">y</span>": <span class="hljs-value"><span class="hljs-number">8</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">facing</span>": <span class="hljs-value"><span class="hljs-string">"down"</span>
+      </span>}
+    ]
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"not found"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Not Found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">404</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"This grid does not contains a robot."</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">grid</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"&lt;grid-id&gt;"</span></span>,
+      "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"&lt;some-status&gt;"</span></span>,
+      "<span class="hljs-attribute">robot</span>": <span class="hljs-value">{}</span>,
+      "<span class="hljs-attribute">dinos</span>": <span class="hljs-value">[]
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div></div><div class="middle"><div id="dino-management-dinosaur-get" class="action get"><h4 class="action-heading"><div class="name">Get dino list from a grid</div><a href="#dino-management-dinosaur-get" class="method get">GET</a><code class="uri">/grid/{grid_id}/dino</code></h4><p>Response body <strong>fields</strong> description</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">FIELD</th>
+<th>TYPE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>type</strong></td>
+<td><code>String</code></td>
+<td>Response type (HTTP Types)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>title</strong></td>
+<td><code>String</code></td>
+<td>Title of the response message</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>status</strong></td>
+<td><code>Numeric</code></td>
+<td>HTTP Response status code</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>message</strong></td>
+<td><code>String</code></td>
+<td>Response message</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data</strong></td>
+<td><code>Object</code></td>
+<td>Resource response data</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.dinos</strong></td>
+<td><code>ArrayObject</code></td>
+<td>Array of Dinos</td>
+</tr>
+<tr>
+<td style="text-align:right"><em><em>data.dinos.[</em>].position</em>*</td>
+<td><code>Object</code></td>
+<td>Dino Position Object</td>
+</tr>
+<tr>
+<td style="text-align:right"><em><em>data.dinos.[</em>].position.x</em>*</td>
+<td><code>Numeric</code></td>
+<td>Dino x-axis position</td>
+</tr>
+<tr>
+<td style="text-align:right"><em><em>data.dinos.[</em>].position.y</em>*</td>
+<td><code>Numeric</code></td>
+<td>Dino y-axis position</td>
+</tr>
+<tr>
+<td style="text-align:right"><em><em>data.dinos.[</em>].facing</em>*</td>
+<td><code>String</code></td>
+<td>Dino facing-direction</td>
+</tr>
+</tbody>
+</table>
+<div class="note">
+<h4 id="header-info-7"><i class="fa fa-info"></i> Info <a class="permalink" href="#header-info-7" aria-hidden="true">¶</a></h4>
+<p>The possible values of <strong>data.robot.facing</strong> is:</p>
+<ul>
+<li>
+<p><strong>up</strong> -&gt; Up facing direction</p>
+</li>
+<li>
+<p><strong>down</strong> -&gt; Down facing direction</p>
+</li>
+<li>
+<p><strong>left</strong> -&gt; Left facing direction</p>
+</li>
+<li>
+<p><strong>rigth</strong> -&gt; Right facing direction</p>
+</li>
+</ul>
+</div>
+<div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>grid_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>my-grid</span></span><p>Unique grid identifier</p>
+</dd></dl></div></div></div><hr class="split"><div class="right"><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">http://localhost:8080/api</span>/grid/<span class="hljs-attribute" title="grid_id">my-grid</span>/dino</span></div><div class="tabs"><div class="example-names"><span>Requests</span><span class="tab-button">Creating New Robot</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">grid-id</span>":<span class="hljs-value"><span class="hljs-string">"my-grid"</span></span>,
+    "<span class="hljs-attribute">dino-pos-x</span>":<span class="hljs-value"><span class="hljs-number">5</span></span>,
+    "<span class="hljs-attribute">dino-pos-y</span>":<span class="hljs-value"><span class="hljs-number">5</span></span>,
+}</code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">201</span><span class="tab-button">400</span><span class="tab-button">404</span><span class="tab-button">409</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"created"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Created"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">201</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Resource created successfully"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"my-grid"</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"created"</span></span>,
+    "<span class="hljs-attribute">robot</span>": <span class="hljs-value">{}</span>,
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">position</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">x</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+          "<span class="hljs-attribute">y</span>": <span class="hljs-value"><span class="hljs-number">5</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">facing</span>": <span class="hljs-value"><span class="hljs-string">"down"</span>
+      </span>}
+    ]
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"bad request"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Bad Request"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">400</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Invalid request body! Take a look on the docs for more details"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">your-request-body</span>": <span class="hljs-value"><span class="hljs-string">"here"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"not found"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Not Found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">404</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"There are no registered grids"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">[]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"conflict"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"A conflict was found"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">409</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"There already exists a dinosaur in this position, \n try another one"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">dinos</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"my-grid"</span></span>,
+      "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"created"</span></span>,
+      "<span class="hljs-attribute">robot</span>": <span class="hljs-value">{}</span>,
+      "<span class="hljs-attribute">dinos</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">position</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">x</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+            "<span class="hljs-attribute">y</span>": <span class="hljs-value"><span class="hljs-number">5</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">facing</span>": <span class="hljs-value"><span class="hljs-string">"down"</span>
+        </span>}
+      ]
+    </span>}</span>,
+    "<span class="hljs-attribute">request-body</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">grid-id</span>": <span class="hljs-value"><span class="hljs-string">"my-grid"</span></span>,
+      "<span class="hljs-attribute">dino-pos-x</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+      "<span class="hljs-attribute">dino-pos-y</span>": <span class="hljs-value"><span class="hljs-number">5</span>
+    </span>}
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div></div><div class="middle"><div id="dino-management-dinosaur-post" class="action post"><h4 class="action-heading"><div class="name">Create a new dinosaur</div><a href="#dino-management-dinosaur-post" class="method post">POST</a><code class="uri">/grid/{grid_id}/dino</code></h4><p>Request body <strong>fields</strong> description</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">FIELD</th>
+<th>TYPE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>grid-id</strong></td>
+<td><code>String</code></td>
+<td>The grid id (Game Id)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>dino-pos-x</strong></td>
+<td><code>Numeric</code></td>
+<td>The dinosaur x-axis position</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>dino-pos-y</strong></td>
+<td><code>Numeric</code></td>
+<td>The dinosaur y-axis postion</td>
+</tr>
+</tbody>
+</table>
+<div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>grid_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>my-grid</span></span><p>Unique grid identifier</p>
+</dd></dl></div></div></div><hr class="split"><div class="right"><div class="definition"><span class="method delete">DELETE</span>&nbsp;<span class="uri"><span class="hostname">http://localhost:8080/api</span>/grid/<span class="hljs-attribute" title="grid_id">my-grid</span>/dino</span></div><div class="tabs"><div class="example-names"><span>Requests</span><span class="tab-button">Deleting Robot</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">501</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"not implemented"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Not implemented"</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">501</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Sorry, this resource doesn't work yet! \n Maybe some day?"</span></span>,
+  "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">grid-id</span>": <span class="hljs-value"><span class="hljs-string">"my-grid"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div></div><div class="middle"><div id="dino-management-dinosaur-delete" class="action delete"><h4 class="action-heading"><div class="name">Delete dino list from a grid</div><a href="#dino-management-dinosaur-delete" class="method delete">DELETE</a><code class="uri">/grid/{grid_id}/dino</code></h4><div class="warning">
+<h4 id="header-warning-1"><i class="fa fa-warning"></i> Warning <a class="permalink" href="#header-warning-1" aria-hidden="true">¶</a></h4>
+<p>Method mapped but <strong>NOT IMPLEMENTED</strong> yet! Probably will be implemented on
+next versions.</p>
+</div>
+<p>Response body <strong>fields</strong> description</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">FIELD</th>
+<th>TYPE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><strong>type</strong></td>
+<td><code>String</code></td>
+<td>Response type (HTTP Types)</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>title</strong></td>
+<td><code>String</code></td>
+<td>Title of the response message</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>status</strong></td>
+<td><code>Numeric</code></td>
+<td>HTTP Response status code</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>message</strong></td>
+<td><code>String</code></td>
+<td>Response message</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data</strong></td>
+<td><code>Object</code></td>
+<td>Resource response data</td>
+</tr>
+<tr>
+<td style="text-align:right"><strong>data.grid-id</strong></td>
+<td><code>String</code></td>
+<td>Grid id (Game Id)</td>
+</tr>
+</tbody>
+</table>
+<div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>grid_id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>my-grid</span></span><p>Unique grid identifier</p>
+</dd></dl></div></div></div><hr class="split"><div class="middle"><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 28 Jan 2019</p></div></div></div></div><script>/* eslint-env browser */
+/* eslint quotes: [2, "single"] */
+'use strict';
+
+/*
+  Determine if a string ends with another string.
+*/
+function endsWith(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+
+/*
+  Get a list of direct child elements by class name.
+*/
+function childrenByClass(element, name) {
+  var filtered = [];
+
+  for (var i = 0; i < element.children.length; i++) {
+    var child = element.children[i];
+    var classNames = child.className.split(' ');
+    if (classNames.indexOf(name) !== -1) {
+      filtered.push(child);
+    }
+  }
+
+  return filtered;
+}
+
+/*
+  Get an array [width, height] of the window.
+*/
+function getWindowDimensions() {
+  var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.body,
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      y = w.innerHeight || e.clientHeight || g.clientHeight;
+
+  return [x, y];
+}
+
+/*
+  Collapse or show a request/response example.
+*/
+function toggleCollapseButton(event) {
+    var button = event.target.parentNode;
+    var content = button.parentNode.nextSibling;
+    var inner = content.children[0];
+
+    if (button.className.indexOf('collapse-button') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+        // Currently showing, so let's hide it
+        button.className = 'collapse-button';
+        content.style.maxHeight = '0px';
+    } else {
+        // Currently hidden, so let's show it
+        button.className = 'collapse-button show';
+        content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+function toggleTabButton(event) {
+    var i, index;
+    var button = event.target;
+
+    // Get index of the current button.
+    var buttons = childrenByClass(button.parentNode, 'tab-button');
+    for (i = 0; i < buttons.length; i++) {
+        if (buttons[i] === button) {
+            index = i;
+            button.className = 'tab-button active';
+        } else {
+            buttons[i].className = 'tab-button';
+        }
+    }
+
+    // Hide other tabs and show this one.
+    var tabs = childrenByClass(button.parentNode.parentNode, 'tab');
+    for (i = 0; i < tabs.length; i++) {
+        if (i === index) {
+            tabs[i].style.display = 'block';
+        } else {
+            tabs[i].style.display = 'none';
+        }
+    }
+}
+
+/*
+  Collapse or show a navigation menu. It will not be hidden unless it
+  is currently selected or `force` has been passed.
+*/
+function toggleCollapseNav(event, force) {
+    var heading = event.target.parentNode;
+    var content = heading.nextSibling;
+    var inner = content.children[0];
+
+    if (heading.className.indexOf('heading') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+      // Currently showing, so let's hide it, but only if this nav item
+      // is already selected. This prevents newly selected items from
+      // collapsing in an annoying fashion.
+      if (force || window.location.hash && endsWith(event.target.href, window.location.hash)) {
+        content.style.maxHeight = '0px';
+      }
+    } else {
+      // Currently hidden, so let's show it
+      content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+/*
+  Refresh the page after a live update from the server. This only
+  works in live preview mode (using the `--server` parameter).
+*/
+function refresh(body) {
+    document.querySelector('body').className = 'preload';
+    document.body.innerHTML = body;
+
+    // Re-initialize the page
+    init();
+    autoCollapse();
+
+    document.querySelector('body').className = '';
+}
+
+/*
+  Determine which navigation items should be auto-collapsed to show as many
+  as possible on the screen, based on the current window height. This also
+  collapses them.
+*/
+function autoCollapse() {
+  var windowHeight = getWindowDimensions()[1];
+  var itemsHeight = 64; /* Account for some padding */
+  var itemsArray = Array.prototype.slice.call(
+    document.querySelectorAll('nav .resource-group .heading'));
+
+  // Get the total height of the navigation items
+  itemsArray.forEach(function (item) {
+    itemsHeight += item.parentNode.offsetHeight;
+  });
+
+  // Should we auto-collapse any nav items? Try to find the smallest item
+  // that can be collapsed to show all items on the screen. If not possible,
+  // then collapse the largest item and do it again. First, sort the items
+  // by height from smallest to largest.
+  var sortedItems = itemsArray.sort(function (a, b) {
+    return a.parentNode.offsetHeight - b.parentNode.offsetHeight;
+  });
+
+  while (sortedItems.length && itemsHeight > windowHeight) {
+    for (var i = 0; i < sortedItems.length; i++) {
+      // Will collapsing this item help?
+      var itemHeight = sortedItems[i].nextSibling.offsetHeight;
+      if ((itemsHeight - itemHeight <= windowHeight) || i === sortedItems.length - 1) {
+        // It will, so let's collapse it, remove its content height from
+        // our total and then remove it from our list of candidates
+        // that can be collapsed.
+        itemsHeight -= itemHeight;
+        toggleCollapseNav({target: sortedItems[i].children[0]}, true);
+        sortedItems.splice(i, 1);
+        break;
+      }
+    }
+  }
+}
+
+/*
+  Initialize the interactive functionality of the page.
+*/
+function init() {
+    var i, j;
+
+    // Make collapse buttons clickable
+    var buttons = document.querySelectorAll('.collapse-button');
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = toggleCollapseButton;
+
+        // Show by default? Then toggle now.
+        if (buttons[i].className.indexOf('show') !== -1) {
+            toggleCollapseButton({target: buttons[i].children[0]});
+        }
+    }
+
+    var responseCodes = document.querySelectorAll('.example-names');
+    for (i = 0; i < responseCodes.length; i++) {
+        var tabButtons = childrenByClass(responseCodes[i], 'tab-button');
+        for (j = 0; j < tabButtons.length; j++) {
+            tabButtons[j].onclick = toggleTabButton;
+
+            // Show by default?
+            if (j === 0) {
+                toggleTabButton({target: tabButtons[j]});
+            }
+        }
+    }
+
+    // Make nav items clickable to collapse/expand their content.
+    var navItems = document.querySelectorAll('nav .resource-group .heading');
+    for (i = 0; i < navItems.length; i++) {
+        navItems[i].onclick = toggleCollapseNav;
+
+        // Show all by default
+        toggleCollapseNav({target: navItems[i].children[0]});
+    }
+}
+
+// Initial call to set up buttons
+init();
+
+window.onload = function () {
+    autoCollapse();
+    // Remove the `preload` class to enable animations
+    document.querySelector('body').className = '';
+};
+</script></body></html>

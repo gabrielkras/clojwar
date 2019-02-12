@@ -1,0 +1,984 @@
+FORMAT: 1A
+HOST: http://localhost:8080/api
+
+# API - ClojWar The Great Battle
+<img style="float: right; position: relative; bottom: 100px; width: 90px; heigth: 90px;" src="../../resources/public/images/clojwar-logo-black.png">
+
+This **API** allows us to manages the **ClojWar Game**
+
+## Features
+This **API** has the following features groups definitions:
+
++ Grid Management
++ Robot Management
++ Dinosaur Management
+
+::: warning
+#### <i class="fa fa-warning"></i> Warning
+The resources of this API is not protect with an **Authentication System**, 
+so be aware of all resources is exposed. The authentication system will be implemented in the future.
+:::
+
+# Group Grid Management
+In this resource we have the following options:
++ **Get all grids**
++ **Get a single grid**
++ **Create a new grid**
+
+## Grids [/grid]
+Create or get grids
+
+### Get all grids [GET]
+
+Response body **fields** description
+
+FIELD | TYPE | DESCRIPTION
+--:| ------------- | --------------
+**type** | `String` | Response type (HTTP Types)
+**title** | `String` | Title of the response message
+**status** | `Numeric` | HTTP Response status code
+**message** | `String` | Response message
+**data** | `ObjectArray` | Resource response data
+**data.id** | `String` | Grid id (Game Id)
+**data.status** | `String` | Grid status (Game Status)
+**data.robot** | `Object` | Robot Object
+**data.dinos** | `ObjectArray` | List of dinosaurs
+
+::: note
+#### <i class="fa fa-info"></i> Info
+The possible values of **data.status** is:
++ **created** -> Just create a grid
++ **ready** -> Ready for play
++ **running** -> The game is running
++ **finished** -> The game os finished
+:::
+
++ Request Getting all Grids
+
+    + Headers
+
+            Content-Type: application/json
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "type": "ok",
+                "title": "Operation Successful",
+                "status": 200,
+                "message": "Successful",
+                "data": [
+                    {
+                        "id": "<some-id>",
+                        "status": "<some-state>",
+                        "robot": {},
+                        "dinos": []
+                    }
+                ]
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "type": "not found",
+                "title": "Not Found",
+                "status": 404,
+                "message": "There are no registered grids",
+                "data": []
+            }
+
+
+### Create a new grid [POST]
+
+Request body **fields** description
+
+FIELD | TYPE | DESCRIPTION
+--:| ------------- | --------------
+**name** | `String` | The grid id (Game Id)
+
++ Request Create a New Grid (application/json)
+    
+    + Body
+
+            {
+                "name": "my-grid-id-name"
+            }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "type": "created",
+                "title": "Created",
+                "status": 201,
+                "message": "The grid has been created successfully!",
+                "data": {
+                    "id": "id",
+                    "status": "created",
+                    "robot": {},
+                    "dinos": []
+                }
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "type": "bad request",
+                "title": "Bad Request",
+                "status": 400,
+                "message": "Invalid request body! Take a look on the docs for more details",
+                "data": {
+                    "your-request-body":"here"
+                }
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "type": "not found",
+                "title": "Not Found",
+                "status": 404,
+                "message": "There are no registered grids",
+                "data": []
+            }
+
++ Response 409 (application/json)
+
+    + Body
+
+            {
+                "type": "conflict",
+                "title": "A conflict was found",
+                "status": 409,
+                "message": "The chosen name for the grid already exists, please choose another.",
+                "data": {
+                    "chosen-name": "id"
+                }
+            }
+
+## Grid Manipulation [/grid/{grid_id}]
+
+Do some actions with a grid, like:
++ Get a especific grid;
++ **Prepare** Game;
++ **Start** Game;
++ **Stop** Game;
+
+### Get an especific grid [GET]
+
+Response body **fields** description
+
+FIELD | TYPE | DESCRIPTION
+--:| ------------- | --------------
+**type** | `String` | Response type (HTTP Types)
+**title** | `String` | Title of the response message
+**status** | `Numeric` | HTTP Response status code
+**message** | `String` | Response message
+**data** | `Object` | Resource response data
+**data.id** | `String` | Grid id (Game Id)
+**data.status** | `String` | Grid status (Game Status)
+**data.robot** | `Object` | Robot Object
+**data.dinos** | `ObjectArray` | List of dinosaurs
+
++ Parameters
+
+    + grid_id: `my-grid` (string, required) - Unique grid identifier
+
+
++ Request Get an Especific Grid
+
+    + Headers
+
+            Content-Type: application/json
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "type": "ok",
+                "title": "Operation Successful",
+                "status": 200,
+                "message": "Successful",
+                "data": {
+                            "id": "<some-id>",
+                            "status": "<some-state>",
+                            "robot": {},
+                            "dinos": []
+                        }
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "type": "not found",
+                "title": "Not Found",
+                "status": 404,
+                "message": "There are no registered grids",
+                "data": []
+            }
+
+
+### Prepare, Start or Stop a Game [PUT]
+
+Request body **fields** description
+
+FIELD | TYPE | DESCRIPTION
+--:| ------------- | --------------
+**grid-id** | `String` | The grid id (Game Id)
+**action** | `String` | The robot action (such as prepare, start or stop)
+
+::: note
+#### <i class="fa fa-info"></i> Info
+The possible values of **action** is:
++ **prepare** -> Change the status grid (game) to ready
++ **start** -> Change the status grid (game) to running
++ **stop** -> Change the status grid (game) to finished
+:::
+
++ Parameters
+
+    + grid_id: `my-grid` (string, required) - Unique grid identifier
+
++ Request Prepare Action (application/json)
+    
+    + Body
+
+            {
+	            "grid-id":"my-grid",
+	            "action": "prepare",
+            }
+
++ Request Start Action (application/json)
+    
+    + Body
+
+            {
+	            "grid-id":"my-grid",
+	            "action": "start",
+            }
+
++ Request Stop Action (application/json)
+    
+    + Body
+
+            {
+	            "grid-id":"my-grid",
+	            "action": "stop",
+            }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "type": "created",
+                "title": "Created",
+                "status": 201,
+                "message": "<Congrats your game is ready to be started> or <Congrats your game is started!> or <Congrats your game is stopped>",
+                "data": {
+                    "id": "id",
+                    "status": "<some-status>",
+                    "robot": "{<some-robot-info>}",
+                    "dinos": "[<some-dino-info>]"
+                }
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "type": "bad request",
+                "title": "Bad Request",
+                "status": 400,
+                "message": "Invalid request body! Take a look on the docs for more details",
+                "data": {
+                    "your-request-body":"here"
+                }
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "type": "not found",
+                "title": "Not Found",
+                "status": 404,
+                "message": "There are no registered grids",
+                "data": []
+            }
+
++ Response 409 (application/json)
+
+    + Body
+
+            {
+                "type": "conflict",
+                "title": "A conflict was found",
+                "status": 409,
+                "message": "<Sorry, but you need to add at least \n one robot and one dinosaur to prepare the game.> or <Sorry, but you need prepare the game before \n started it> or <Sorry, but you can only stop the game \n if it is in a running state!>",
+                "data": {
+                    "id": "id",
+                    "status": "<some-status>",
+                    "robot": "{<some-robot-info>}",
+                    "dinos": "[<some-dino-info>]"
+                }
+            }
+
+# Group Robot Management
+In this resource we have the following options:
++ **Get robot from a grid**
++ **Create new robot into a grid**
++ **Delete the current robot from a grid**
+
+## Robot [/grid/{grid_id}/robot]
+
+Get a robot from a grid
+
+### Get robot from a grid [GET]
+
+Response body **fields** description
+
+FIELD | TYPE | DESCRIPTION
+--:| ------------- | --------------
+**type** | `String` | Response type (HTTP Types)
+**title** | `String` | Title of the response message
+**status** | `Numeric` | HTTP Response status code
+**message** | `String` | Response message
+**data** | `Object` | Resource response data
+**data.robot** | `Object` | Robot Object
+**data.robot.name** | `String` | Robot Name
+**data.robot.position** | `Object` | Robot Position Object
+**data.robot.position.x** | `Numeric` | Robot x-axis position
+**data.robot.position.y** | `Numeric` | Robot y-axis position
+**data.robot.facing** | `String` | Robot facing-direction
+**data.robot.points** | `Numeric` | Robot facing-direction
+
+::: note
+#### <i class="fa fa-info"></i> Info
+The possible values of **data.robot.facing** is:
++ **up** -> Up facing direction
++ **down** -> Down facing direction
++ **left** -> Left facing direction
++ **rigth** -> Right facing direction
+:::
+
++ Parameters
+
+    + grid_id: `my-grid` (string, required) - Unique grid identifier
+
+
++ Request Getting Robot from a Grid
+
+    + Headers
+
+            Content-Type: application/json
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "type": "ok",
+                "title": "Operation Successful",
+                "status": 200,
+                "message": "Successful",
+                "data": {
+                    "robot": {
+                        "name": "Wall-e",
+                        "position": {
+                            "x": 5,
+                            "y": 5
+                        },
+                        "facing": "down",
+                        "points": 0
+                    }
+                }
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+               "type": "not found",
+                "title": "Not Found",
+                "status": 404,
+                "message": "This grid does not contains a robot.",
+                "data": {
+                    "grid": {
+                        "id": "<grid-id>",
+                        "status": "<some-status>",
+                        "robot": {},
+                        "dinos": []
+                    }
+                }
+            }
+
+### Create a new robot [POST]
+
+Request body **fields** description
+
+FIELD | TYPE | DESCRIPTION
+--:| ------------- | --------------
+**grid-id** | `String` | The grid id (Game Id)
+**name** | `String` | The robot name
+**robot-pos-x** | `Numeric` | The robot x-axis position
+**robot-pos-y** | `Numeric` | The robot y-axis postion
+**facing-direction** | `String` | The robot facing direction
+
+::: note
+#### <i class="fa fa-info"></i> Info
+The possible values of **data.robot.facing** is:
++ **up** -> Up facing direction
++ **down** -> Down facing direction
++ **left** -> Left facing direction
++ **rigth** -> Right facing direction
+:::
+
++ Parameters
+
+    + grid_id: `my-grid` (string, required) - Unique grid identifier
+
++ Request Creating New Robot (application/json)
+    
+    + Body
+
+            {
+	            "grid-id":"my-grid",
+	            "name":"Wall-e",
+	            "robot-pos-x":5,
+	            "robot-pos-y":5,
+	            "facing-direction":"down"
+            }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "type": "created",
+                "title": "Created",
+                "status": 201,
+                "message": "Resource created successfully",
+                "data": {
+                    "id": "id",
+                    "status": "created",
+                    "robot": {
+                        "name": "Wall-e",
+                        "position": {
+                            "x": 5,
+                            "y": 5
+                        },
+                        "facing": "down",
+                        "points": 0
+                    },
+                    "dinos": []
+                }
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "type": "bad request",
+                "title": "Bad Request",
+                "status": 400,
+                "message": "Invalid request body! Take a look on the docs for more details",
+                "data": {
+                    "your-request-body":"here"
+                }
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "type": "not found",
+                "title": "Not Found",
+                "status": 404,
+                "message": "There are no registered grids",
+                "data": []
+            }
+
++ Response 409 (application/json)
+
+    + Body
+
+            {
+                "type": "conflict",
+                "title": "A conflict was found",
+                "status": 409,
+                "message": "There already exists a robot on \n this grid or you trying to create a robot in the same existent dinosaur position",
+                "data": {
+                    "robot": {
+                        "name": "Wall-e",
+                        "position": {
+                            "x": 5,
+                            "y": 5
+                        },
+                        "facing": "down",
+                        "points": 0
+                    }
+                }
+            }
+
+### Delete robot from a grid [DELETE]
+
+Response body **fields** description
+
+FIELD | TYPE | DESCRIPTION
+--:| ------------- | --------------
+**type** | `String` | Response type (HTTP Types)
+**title** | `String` | Title of the response message
+**status** | `Numeric` | HTTP Response status code
+**message** | `String` | Response message
+**data** | `ObjectArray` | Resource response data
+**data.id** | `String` | Grid id (Game Id)
+**data.status** | `String` | Grid status (Game Status)
+**data.robot** | `Object` | Robot Object
+**data.dinos** | `ObjectArray` | List of dinosaurs
+
+::: note
+#### <i class="fa fa-info"></i> Info
+The possible values of **data.status** is:
++ **created** -> Just create a grid
++ **ready** -> Ready for play
++ **running** -> The game is running
++ **finished** -> The game os finished
+:::
+
++ Parameters
+
+    + grid_id: `my-grid` (string, required) - Unique grid identifier
+
+
++ Request Deleting Robot
+
+    + Headers
+
+            Content-Type: application/json
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "type": "ok",
+                "title": "Operation Successful",
+                "status": 200,
+                "message": "Successful",
+                "data": {
+                    "id": "id",
+                    "status": "<some-status>",
+                    "robot": {},
+                    "dinos": []
+                }
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+               "type": "not found",
+                "title": "Not Found",
+                "status": 404,
+                "message": "This grid does not contains a robot.",
+                "data": {
+                    "grid": {
+                        "id": "<grid-id>",
+                        "status": "<some-status>",
+                        "robot": {},
+                        "dinos": []
+                    }
+                }
+            }
+
+## Robot Actions [/grid/{grid_id}/robot/actions]
+
+Do some actions with a robot, like:
++ Walk
++ Attack
+
+### Attack or Walking with a robot [PUT]
+
+Request body **fields** description
+
+FIELD | TYPE | DESCRIPTION
+--:| ------------- | --------------
+**grid-id** | `String` | The grid id (Game Id)
+**action** | `String` | The robot action (such as attack or walk)
+**value** | `String` | The robot walking direction (required for walk)
+
+::: note
+#### <i class="fa fa-info"></i> Info
+The possible values of **action** is:
++ **attack** -> Throw the robot attack
++ **walk** -> Walki with a robot (need to especify the direction)
+:::
+
+::: note
+#### <i class="fa fa-info"></i> Info
+The possible values of **value** is:
++ **forward** -> Walk one space forward
++ **backward** -> Walk one space backward
++ **leftward** -> Walk one space leftward
++ **rightward** -> Walk one space rightward
+:::
+
+
++ Parameters
+
+    + grid_id: `my-grid` (string, required) - Unique grid identifier
+
++ Request Attack Action (application/json)
+    
+    + Body
+
+            {
+	            "grid-id":"my-grid",
+	            "action": "attack",
+            }
+
++ Request Walk Action (application/json)
+    
+    + Body
+
+            {
+	            "grid-id":"my-grid",
+	            "action": "attack",
+                "value":"forward"
+            }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "type": "ok",
+                "title": "Operation Successful",
+                "status": 200,
+                "message": "Sorry, you not killed any dinosaur",
+                "data": {
+                    "id": "id",
+                    "status": "<some-status>",
+                    "robot": "{<some-robot-info>}",
+                    "dinos": "[<some-dino-info>]"
+                }
+            }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "type": "created",
+                "title": "Created",
+                "status": 201,
+                "message": "Resource created successfully",
+                "data": {
+                    "id": "id",
+                    "status": "<some-status>",
+                    "robot": "{<some-robot-info>}",
+                    "dinos": "[<some-dino-info>]"
+                }
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "type": "bad request",
+                "title": "Bad Request",
+                "status": 400,
+                "message": "Invalid request body! Take a look on the docs for more details",
+                "data": {
+                    "your-request-body":"here"
+                }
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "type": "not found",
+                "title": "Not Found",
+                "status": 404,
+                "message": "There are no registered grids",
+                "data": []
+            }
+
++ Response 409 (application/json)
+
+    + Body
+
+            {
+                "type": "conflict",
+                "title": "A conflict was found",
+                "status": 409,
+                "message": "<Sorry, but you need to start the game first \n before pursuing with this operation> or <Sorry, but you can't walk \n further on that direction> or <Sorry, entity collision detected! \n try to walk in another direction>",
+                "data": {
+                    "id": "id",
+                    "status": "<some-status>",
+                    "robot": "{<some-robot-info>}",
+                    "dinos": "[<some-dino-info>]"
+                }
+            }
+
+
+
+# Group Dino Management
+In this resource we have the following options:
++ **Get dino list from a grid**
++ **Create new dino and insert into a grid**
++ **Delete the dino list from a grid (NOT IMPLEMENTED)**
+
+## Dinosaur [/grid/{grid_id}/dino]
+
+Get a dino list from a grid
+
+### Get dino list from a grid [GET]
+
+Response body **fields** description
+
+FIELD | TYPE | DESCRIPTION
+--:| ------------- | --------------
+**type** | `String` | Response type (HTTP Types)
+**title** | `String` | Title of the response message
+**status** | `Numeric` | HTTP Response status code
+**message** | `String` | Response message
+**data** | `Object` | Resource response data
+**data.dinos** | `ArrayObject` | Array of Dinos
+**data.dinos.[*].position** | `Object` | Dino Position Object
+**data.dinos.[*].position.x** | `Numeric` | Dino x-axis position
+**data.dinos.[*].position.y** | `Numeric` | Dino y-axis position
+**data.dinos.[*].facing** | `String` | Dino facing-direction
+
+::: note
+#### <i class="fa fa-info"></i> Info
+The possible values of **data.robot.facing** is:
++ **up** -> Up facing direction
++ **down** -> Down facing direction
++ **left** -> Left facing direction
++ **rigth** -> Right facing direction
+:::
+
++ Parameters
+
+    + grid_id: `my-grid` (string, required) - Unique grid identifier
+
+
++ Request Getting Robot from a Grid
+
+    + Headers
+
+            Content-Type: application/json
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "type": "ok",
+                "title": "Operation Successful",
+                "status": 200,
+                "message": "Successful",
+                "data": {
+                    "dinos": [
+                        {
+                            "position": {
+                                "x": 5,
+                                "y": 8
+                            },
+                            "facing": "down"
+                        }
+                    ]
+                }
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+               "type": "not found",
+                "title": "Not Found",
+                "status": 404,
+                "message": "This grid does not contains a robot.",
+                "data": {
+                    "grid": {
+                        "id": "<grid-id>",
+                        "status": "<some-status>",
+                        "robot": {},
+                        "dinos": []
+                    }
+                }
+            }
+
+### Create a new dinosaur [POST]
+
+Request body **fields** description
+
+FIELD | TYPE | DESCRIPTION
+--:| ------------- | --------------
+**grid-id** | `String` | The grid id (Game Id)
+**dino-pos-x** | `Numeric` | The dinosaur x-axis position
+**dino-pos-y** | `Numeric` | The dinosaur y-axis postion
+
++ Parameters
+
+    + grid_id: `my-grid` (string, required) - Unique grid identifier
+
++ Request Creating New Robot (application/json)
+    
+    + Body
+
+            {
+	            "grid-id":"my-grid",
+	            "dino-pos-x":5,
+	            "dino-pos-y":5,
+            }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "type": "created",
+                "title": "Created",
+                "status": 201,
+                "message": "Resource created successfully",
+                "data": {
+                    "id": "my-grid",
+                    "status": "created",
+                    "robot": {},
+                    "dinos": [
+                        {
+                            "position": {
+                                "x": 5,
+                                "y": 5
+                            },
+                            "facing": "down"
+                        }
+                    ]
+                }
+            }
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "type": "bad request",
+                "title": "Bad Request",
+                "status": 400,
+                "message": "Invalid request body! Take a look on the docs for more details",
+                "data": {
+                    "your-request-body":"here"
+                }
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "type": "not found",
+                "title": "Not Found",
+                "status": 404,
+                "message": "There are no registered grids",
+                "data": []
+            }
+
++ Response 409 (application/json)
+
+    + Body
+
+            {
+                "type": "conflict",
+                "title": "A conflict was found",
+                "status": 409,
+                "message": "There already exists a dinosaur in this position, \n try another one",
+                "data": {
+                    "dinos": {
+                        "id": "my-grid",
+                        "status": "created",
+                        "robot": {},
+                        "dinos": [
+                            {
+                                "position": {
+                                    "x": 5,
+                                    "y": 5
+                                },
+                                "facing": "down"
+                            }
+                        ]
+                    },
+                    "request-body": {
+                        "grid-id": "my-grid",
+                        "dino-pos-x": 5,
+                        "dino-pos-y": 5
+                    }
+                }
+            }
+
+### Delete dino list from a grid [DELETE]
+
+::: warning
+#### <i class="fa fa-warning"></i> Warning
+Method mapped but **NOT IMPLEMENTED** yet! Probably will be implemented on
+next versions.
+:::
+
+Response body **fields** description
+
+FIELD | TYPE | DESCRIPTION
+--:| ------------- | --------------
+**type** | `String` | Response type (HTTP Types)
+**title** | `String` | Title of the response message
+**status** | `Numeric` | HTTP Response status code
+**message** | `String` | Response message
+**data** | `Object` | Resource response data
+**data.grid-id** | `String` | Grid id (Game Id)
+
++ Parameters
+
+    + grid_id: `my-grid` (string, required) - Unique grid identifier
+
+
++ Request Deleting Robot
+
+    + Headers
+
+            Content-Type: application/json
+
++ Response 501 (application/json)
+
+    + Body
+
+            {
+                "type": "not implemented",
+                "title": "Not implemented",
+                "status": 501,
+                "message": "Sorry, this resource doesn't work yet! \n Maybe some day?",
+                "data": {
+                    "grid-id": "my-grid"
+                }
+            }

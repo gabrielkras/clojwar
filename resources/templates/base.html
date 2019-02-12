@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+
+    <!-- Main Page -->
+    <link rel="shortcut icon" type="image/png" href="/images/clojwar-logo-black.ico" />
+    <title>clojwar - The Great Battle</title>
+</head>
+
+<body>
+    <header>
+        <!-- Image and text -->
+        <nav class="navbar navbar-dark clojwar-color">
+            <a class="navbar-brand" href="/">
+                <img src="/images/clojwar-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                The Great Battle
+            </a>
+            {% block menu %}
+            {% endblock %}
+        </nav>
+    </header>
+    {% block body %}
+    <section class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+
+            </div>
+            <div class="col-sm">
+                <div id="alerts"></div>
+                {% block center-body %}
+                {% endblock %}
+            </div>
+            <div class="col-sm">
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+    <footer>
+        <!-- jQuery first, then Bootstrap JS -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+
+        <!-- Game Js Script-->
+        <script src="/js/game.js"></script>
+
+        <!-- Custom Page JS -->
+        {% block js %}
+        {% endblock js %}
+    </footer>
+</body>
+
+</html>

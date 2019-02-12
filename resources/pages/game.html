@@ -1,0 +1,245 @@
+{% extends '../templates/base.html' %}
+
+{% block js %}
+<!-- Main Page JS-->
+<script src="/js/player.js"></script>
+
+{% endblock %}
+
+{% block body %}
+<!-- {% debug %} -->
+<div class="d-flex flex-row justify-content-between">
+    <div class="p-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="alerts"></div>
+                            <h5 class="card-title text-center">Game Status</h5>
+                            <table class="table ">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Field</th>
+                                        <th scope="col">Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Game Name</td>
+                                        <td><strong>{{game.id}}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Status</td>
+                                        <td><strong id="game-status">{{game.status}}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Robot Name</td>
+                                        <td><strong id="robot-name">{{game.robot.name}}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Robot Points</td>
+                                        <td><strong id="robot-points">{{game.robot.points}}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Robot X Position</td>
+                                        <td><strong id="robot-x-pos">{{game.robot.position.x}}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Robot Y Position</td>
+                                        <td><strong id="robot-y-pos">{{game.robot.position.y}}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dinosaurs Left</td>
+                                        <td><strong id="dino-left">{{game.dinos|length}}</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row mt-md-2">
+                                <div class="col-12">
+                                    <button {% if not game.robot|empty? %} disabled {% endif %} type="button" id="create-robot"
+                                        class="btn btn-dark btn-block" data-toggle="modal" data-target="#robotModal">Create
+                                        a Robot</button>
+                                </div>
+                            </div>
+                            <div class="row mt-md-2">
+                                <div class="col-12">
+                                    <button {% ifunequal game.status ":created" %} disabled {% endifunequal %} type="button"
+                                        id="create-dino" class="btn btn-secondary btn-block" data-toggle="modal"
+                                        data-target="#dinoModal">Add
+                                        a Dinosaur</button>
+                                </div>
+                            </div>
+                            <div class="row mt-md-2">
+                                <div class="col-12">
+                                    <button type="button" id="prepare-game" class="btn btn-info btn-block">Prepare
+                                        Game!</button>
+                                </div>
+                            </div>
+                            <div class="row mt-md-2">
+                                <div class="col-12">
+                                    <button disabled type="button" id="start-game" class="btn btn-success btn-block">Start
+                                        Game!</button>
+                                </div>
+                            </div>
+                            <div class="row mt-md-2">
+                                <div class="col-12">
+                                    <button disabled type="button" id="stop-game" class="btn btn-danger btn-block">Stop
+                                        Game!</button>
+                                </div>
+                            </div>
+                            <div class="row mt-md-2">
+                                <div class="col-12">
+                                    <button type="button" id="game-border" class="btn btn-dark btn-block">Remove Grid
+                                        Lines</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="alerts"></div>
+                            <table class="table ">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Command</th>
+                                        <th scope="col">Keyboard Binding</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Walk Forward</td>
+                                        <td><strong>W or &#8593;</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Walk Backward</td>
+                                        <td><strong>S or &#8595;</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Walk Rightward</td>
+                                        <td><strong>D or &#8594;</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Walk Leftward</td>
+                                        <td><strong>A or &#8592;</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Attack</td>
+                                        <td><strong>SPACE or ENTER</strong></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="grid" class="p-9">
+        <!-- Hide table Before Game!-->
+        <div class="card">
+            <div class="card-body">
+                <table id="game-grid" class="table table-bordered">
+                    <tbody>
+                        {% for row in size.y-range %}
+                        <tr style="height: 2px;">
+                            {% for col in size.x-range %}
+                            <td id="x-{{col}}-y-{{row}}" style="width: 2px;">
+
+                            </td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Create Robot Modal -->
+<div class="modal fade" id="robotModal" tabindex="-1" role="dialog" aria-labelledby="robotModallLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="robotModallLabel">Create a new Robot!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="newRobotForm">
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="robotName">Robot Name</label>
+                        <input required type="text" class="form-control" id="robotName" aria-describedby="robotName"
+                            placeholder="Choose a name (e.g Bot)">
+                        <small class="form-text text-muted">Choose a nice name to your robot!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="robotPos">Robot Position</label>
+                        <input required type="number" class="form-control" id="robot-pos-x" aria-describedby="robot-pos-x"
+                            min="{{ size.x-range|first}}" max="{{ size.x-range|last}}" value="0">
+                        <small class="form-text text-muted">Choose a x-axis position!</small>
+                        <input required type="number" class="form-control" id="robot-pos-y" aria-describedby="robot-pos-y"
+                            min="{{ size.y-range|last}}" max="{{ size.y-range|first}}" value="0">
+                        <small class="form-text text-muted">Choose a y-axis position!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="robotFacing">Robot Facing Position</label>
+                        <select id="robotFacing" class="form-control">
+                            <option value="up">Looking Forward (up)</option>
+                            <option value="down">Looking Backward (down)</option>
+                            <option value="left">Looking Leftward (left)</option>
+                            <option value="right">Looking Rightward (right)</option>
+                        </select>
+                        <small class="form-text text-muted">Choose a facing position!</small>
+                    </div>
+                    <input type="hidden" id="game-id" value="{{game.id}}">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="saveRobot" type="button" class="btn btn-dark">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Create Dinosaur Modal -->
+<div class="modal fade" id="dinoModal" tabindex="-1" role="dialog" aria-labelledby="dinoModallLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="dinoModallLabel">Add new Dinosaur!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="newDinoForm">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="dinoPos">Dinosaur Position</label>
+                        <input required type="number" class="form-control" id="dino-pos-x" aria-describedby="dino-pos-x"
+                            min="{{ size.x-range|first}}" max="{{ size.x-range|last}}" value="0">
+                        <small class="form-text text-muted">Choose a x-axis position!</small>
+                        <input required type="number" class="form-control" id="dino-pos-y" aria-describedby="dino-pos-y"
+                            min="{{ size.y-range|last}}" max="{{ size.y-range|first}}" value="0">
+                        <small class="form-text text-muted">Choose a y-axis position!</small>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="saveDino" type="button" class="btn btn-dark">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

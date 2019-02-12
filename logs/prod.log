@@ -1,0 +1,144 @@
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:07:08 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 29}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/game", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:07:08 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/game", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/game", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/jquery.min.js", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:07:08 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/js/jquery.min.js", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:07:08 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/jquery.min.js", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 1}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 3}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/game.js", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:07:08 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/js/game.js", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/game.js", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/main.js", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:07:08 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/js/main.js", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/main.js", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 3}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/nuwar-logo-black.png", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:07:08 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/images/nuwar-logo-black.png", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:07:08 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/nuwar-logo-black.png", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 3}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 3}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:07:08 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:07:08 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 3}
+12-02-2019 23:08:25 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/game", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:25 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/game", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:25 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/game", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 23}
+12-02-2019 23:08:25 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.png", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:25 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.png", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:25 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.png", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 5}
+12-02-2019 23:08:25 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:25 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:25 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:08:25 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:25 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:25 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:08:25 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:25 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:25 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 1}
+12-02-2019 23:08:40 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/game", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:40 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/game", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:40 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/game", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 1}
+12-02-2019 23:08:40 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:40 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:40 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/jquery.min.js", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:40 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:08:40 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/js/jquery.min.js", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:40 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/game.js", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:40 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/js/game.js", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:40 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/jquery.min.js", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 3}
+12-02-2019 23:08:40 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/game.js", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:08:40 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:40 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:40 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:08:40 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.png", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:40 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/main.js", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:40 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/js/main.js", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:40 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.png", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:40 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/main.js", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:08:40 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.png", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:08:40 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:40 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:40 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 3}
+12-02-2019 23:08:48 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/game", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:48 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/game", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:48 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/game", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 1}
+12-02-2019 23:08:48 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/jquery.min.js", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:48 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:48 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/js/jquery.min.js", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:48 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/jquery.min.js", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 1}
+12-02-2019 23:08:48 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:48 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/game.js", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:48 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 3}
+12-02-2019 23:08:48 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/js/game.js", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:48 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/main.js", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:48 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/js/main.js", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:48 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/game.js", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:08:48 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/main.js", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:08:48 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:48 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:48 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:08:48 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.png", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:48 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.png", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:48 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.png", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:08:48 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:48 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:48 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:08:59 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :post, :uri "/api/grid", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:59 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :post, :uri "/api/grid", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:59 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :post, :uri "/api/grid", :server-name "127.0.0.1", :ring.logger/type :finish, :status 201, :ring.logger/ms 15}
+12-02-2019 23:08:59 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/game/id", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:08:59 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/game/id", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:08:59 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/game/id", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 3}
+12-02-2019 23:09:00 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:09:00 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/jquery.min.js", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:09:00 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:09:00 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/js/jquery.min.js", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:09:00 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:09:00 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/jquery.min.js", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 3}
+12-02-2019 23:09:00 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/game.js", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:09:00 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/js/game.js", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:09:00 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/game.js", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 1}
+12-02-2019 23:09:00 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:09:00 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:09:00 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:09:00 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/player.js", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:09:00 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/js/player.js", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:09:00 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/player.js", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:09:00 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:09:00 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:09:00 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 1}
+12-02-2019 23:09:00 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/api/grid/id", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:09:00 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/api/grid/id", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:09:00 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/api/grid/id", :server-name "127.0.0.1", :ring.logger/type :finish, :status 200, :ring.logger/ms 3}
+12-02-2019 23:09:14 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :put, :uri "/api/grid/id/robot/actions", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:09:14 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :put, :uri "/api/grid/id/robot/actions", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:09:14 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :put, :uri "/api/grid/id/robot/actions", :server-name "127.0.0.1", :ring.logger/type :finish, :status 409, :ring.logger/ms 4}
+12-02-2019 23:09:15 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/game/id", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:09:15 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/game/id", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:09:15 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/game/id", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 1}
+12-02-2019 23:09:15 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:09:15 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:09:15 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/css/custom.css", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 1}
+12-02-2019 23:09:15 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/jquery.min.js", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:09:15 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/js/jquery.min.js", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:09:15 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/jquery.min.js", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:09:15 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/game.js", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:09:15 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/js/game.js", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:09:15 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/game.js", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:09:15 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/player.js", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:09:15 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/js/player.js", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:09:15 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/js/player.js", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:09:15 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:09:15 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:09:15 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo.png", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 2}
+12-02-2019 23:09:15 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:09:15 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:09:15 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/images/clojwar-logo-black.ico", :server-name "127.0.0.1", :ring.logger/type :finish, :status nil, :ring.logger/ms 3}
+12-02-2019 23:09:16 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/api/grid/id", :server-name "127.0.0.1", :ring.logger/type :starting}
+12-02-2019 23:09:16 +0000 Zapole DEBUG [clojwar.server:19] - nil {:request-method :get, :uri "/api/grid/id", :server-name "127.0.0.1", :ring.logger/type :params, :params nil}
+12-02-2019 23:09:16 +0000 Zapole INFO [clojwar.server:19] - nil {:request-method :get, :uri "/api/grid/id", :server-name "127.0.0.1", :ring.logger/type :finish, :status 200, :ring.logger/ms 2}

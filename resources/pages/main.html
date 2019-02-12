@@ -1,0 +1,50 @@
+{% extends '../templates/base.html' %}
+
+{% block js %}
+<!-- Main Page JS-->
+<script src="/js/main.js"></script>
+{% endblock %}
+
+{% block center-body %}
+<div class="card .clojwar-card-width" style="width: 50rem;">
+    <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="/images/clojwar-logo-black.png" width="150" height="150" class="d-inline-block align-top"
+                        alt="">
+                </div>
+                <div class="col-sm-9">
+                    <h5 class="card-title">Welcome! to the Clojwar Game!</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Let's kill some dinosaurs?</h6>
+                    <p class="card-text"><strong>Goal of the game </strong></p>
+                    <ul>
+                        <li> Kill Dinosaurs </li>
+                    </ul>
+                    <p class="card-text"><strong>Rules </strong></p>
+                    <ul>
+                        <li> The Robot can walk Forward, Backward, Leftward and Rightward.</li>
+                        <li> The Robot can attack! The attack will destroy all enemies nearby him.</li>
+                        <li> The Robot and the Dinosaur can't stay in the same map position. </li>
+                        <li> The Robot can't move outside of map. </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="card-text"><strong>Please, complete the form to start the game!</strong></p>
+                    <form>
+                        <div class="form-group">
+                            <label for="gameId">Game ID</label>
+                            <input required type="text" class="form-control" id="gameId" aria-describedby="gameId"
+                                placeholder="Enter your game id">
+                            <small id="gameId" class="form-text text-muted">You need to choose an unique game id!</small>
+                        </div>
+                        <button type="button" id="create-grid" class="btn btn-primary">Let's Go!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
